@@ -4,21 +4,15 @@ pipeline {
             label 'workstation'
         }
     }
-    environment {
-        URL = "pipeline.google.com"
-    }
     stages {
         stage('Stage1') {
-            environment{
-                URL = "pipeline.google.com"
-            }
             steps {
-                sh 'echo Hello Stage1, URL = ${URL}'
+                sh 'echo Hello Stage1'
             }
         }
         stage('Stage2') {
              steps {
-                sh 'echo Hello Stage2, URL = ${URL}'
+                sh 'echo Hello Stage2'
              }
         }
     }
