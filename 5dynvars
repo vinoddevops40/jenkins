@@ -5,10 +5,6 @@ pipeline {
         }
     }
 
-    options {
-        disableConcurrentBuilds()
-    }
-
     environment {
         SURL = "pipeline.google.com"
         CREDS = credentials('CENTOS')
