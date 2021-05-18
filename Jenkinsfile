@@ -5,12 +5,12 @@ pipeline {
         }
     }
     environment {
-        URL = "pipeline.google.com"
+        SURL = "pipeline.google.com"
     }
     stages {
         stage('Stage1') {
             environment{
-                URL = "Stage.google.com"
+                SURL = "Stage.google.com"
             }
             steps {
                 sh 'echo Hello Stage1, URL = ${URL}'
