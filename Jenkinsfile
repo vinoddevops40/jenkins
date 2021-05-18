@@ -7,7 +7,7 @@ pipeline {
 
     options {
         disableConcurrentBuilds()
-        buildDiscarder(logRotator(numToKeepStr: '1'))
+        buildDiscarder(logRotator(numToKeepStr: '6'))
     }
 
     environment {
