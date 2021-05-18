@@ -13,12 +13,12 @@ pipeline {
                 SURL = "Stage.google.com"
             }
             steps {
-                sh 'echo Hello Stage1, URL = ${URL}'
+                sh 'echo Hello Stage1, URL = ${SURL}'
             }
         }
         stage('Stage2') {
              steps {
-                sh 'echo Hello Stage2, URL = ${URL}'
+                sh 'echo Hello Stage2, URL = ${SURL}'
              }
         }
     }
