@@ -119,6 +119,8 @@ agent {
         label 'workstation'
     }
 }
+stages {
+    stage('stage1') {
 matrix {
     axes {
         axis {
@@ -136,4 +138,8 @@ matrix {
         }
     }
 }
+
+    }
+}
+
 }
