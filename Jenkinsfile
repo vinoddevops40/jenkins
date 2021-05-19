@@ -135,7 +135,7 @@ matrix {
     stages {
         stage('build-and-test') {
             steps {
-                        echo "Do Build for ${PLATFORM}"
+                        echo "Do Build for ${PLATFORM}  ${BROWSER}""
             }
 
         }
