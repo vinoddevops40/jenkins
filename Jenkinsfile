@@ -96,12 +96,12 @@ pipeline {
         }
         stage('Parallel Stages') {
             parallel {
-            stage(Sleep 30) {
+            stage(Sleep-30) {
                 steps {
                     sh 'sleep 30'
                 }
             }
-            stage(Sleep 60) {
+            stage(Sleep-60) {
                 steps {
                     sh 'sleep 60'
                 }
