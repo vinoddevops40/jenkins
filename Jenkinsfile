@@ -87,7 +87,7 @@ pipeline {
         }
         stage('Example Deploy') {
             options {
-                lock lable: 'DOCKER', quantity: 1, variable: 'deployEnv'
+                lock label: 'DOCKER', quantity: 1, variable: 'deployEnv'
             }
             steps {
                 echo "Deploying to ${deployEnv}"
