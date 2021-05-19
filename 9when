@@ -33,8 +33,6 @@ pipeline {
     stages {
         stage('Stage1') {
             when {
-                beforeAgent true
-                beforeInput true
                 anyOf {
                     environment name: 'ENV', value: 'DEV'
                     environment name: 'ENV', value: 'QA'
