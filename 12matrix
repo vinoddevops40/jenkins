@@ -127,11 +127,15 @@ matrix {
             name 'PLATFORM'
             values 'linux', 'mac', 'windows'
         }
+        axis {
+            name 'BROWSER'
+            values 'chrome', 'edge', 'firefox', 'safari'
+        }
     }
     stages {
         stage('build-and-test') {
             steps {
-                        echo "Do Build for ${PLATFORM}""
+                        echo "Do Build for ${PLATFORM}  ${BROWSER}""
             }
 
         }
