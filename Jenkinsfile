@@ -33,7 +33,7 @@ pipeline {
     stages {
         stage('Stage1') {
             when {
-                ENV == "QA"
+                environment name: 'ENV', value: 'QA'
             }
             input {
                 message "Do you want to approve to continue?"
@@ -53,7 +53,7 @@ pipeline {
         }
         stage('Stage2') {
             when {
-                ENV == "PROD"
+                environment name: 'ENV', value: 'PROD'
             }
              steps {
                 sh 'echo Hello Stage2, URL = ${SURL}'
