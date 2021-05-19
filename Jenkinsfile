@@ -73,41 +73,64 @@
 //
 // }
 
-pipeline {
+// pipeline {
+//     agent {
+//         node {
+//             label 'workstation'
+//         }
+//     }
+//     stages {
+//         stage('Example Build') {
+//             steps {
+//                 echo 'Hello World'
+//             }
+//         }
+//         stage('Example Deploy') {
+// //             options {
+// //                 lock label: 'DOCKER', quantity: 1, variable: 'deployEnv'
+// //             }
+//             steps {
+// //                 echo "Deploying to ${deployEnv}"
+// //                 sh 'sleep 10'
+//                    echo 'Hello World'
+//             }
+//         }
+//         stage('Parallel Stages') {
+//             parallel {
+//             stage('Sleep-30') {
+//                 steps {
+//                     sh 'sleep 30'
+//                 }
+//             }
+//             stage('Sleep-60') {
+//                 steps {
+//                     sh 'sleep 60'
+//                 }
+//             }
+//             }
+//         }
+//     }
+// }
+
+matrix {
     agent {
         node {
             label 'workstation'
         }
     }
+    axes {
+        axis {
+            name 'PLATFORM'
+            values 'linux', 'mac', 'windows'
+        }
+        axis {
+            name 'BROWSER'
+            values 'chrome', 'edge', 'firefox', 'safari'
+        }
+    }
     stages {
-        stage('Example Build') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Example Deploy') {
-//             options {
-//                 lock label: 'DOCKER', quantity: 1, variable: 'deployEnv'
-//             }
-            steps {
-//                 echo "Deploying to ${deployEnv}"
-//                 sh 'sleep 10'
-                   echo 'Hello World'
-            }
-        }
-        stage('Parallel Stages') {
-            parallel {
-            stage('Sleep-30') {
-                steps {
-                    sh 'sleep 30'
-                }
-            }
-            stage('Sleep-60') {
-                steps {
-                    sh 'sleep 60'
-                }
-            }
-            }
+        stage('build-and-test') {
+            // ...
         }
     }
 }
