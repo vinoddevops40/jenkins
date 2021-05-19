@@ -112,12 +112,14 @@
 //     }
 // }
 
-matrix {
-    agent {
-        node {
-            label 'workstation'
-        }
+
+pipeline {
+agent {
+    node {
+        label 'workstation'
     }
+}
+matrix {
     axes {
         axis {
             name 'PLATFORM'
@@ -133,4 +135,5 @@ matrix {
             echo "Do Build for ${PLATFORM}"
         }
     }
+}
 }
