@@ -33,7 +33,7 @@ pipeline {
     stages {
         stage('Stage1') {
             when {
-                anyof {
+                anyOf {
                     environment name: 'ENV', value: 'DEV'
                     environment name: 'ENV', value: 'QA'
                 }
