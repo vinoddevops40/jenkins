@@ -90,8 +90,9 @@ pipeline {
 //                 lock label: 'DOCKER', quantity: 1, variable: 'deployEnv'
 //             }
             steps {
-                echo "Deploying to ${deployEnv}"
-                sh 'sleep 10'
+//                 echo "Deploying to ${deployEnv}"
+//                 sh 'sleep 10'
+                   echo 'Hello World'
             }
         }
         stage('Parallel Stages') {
