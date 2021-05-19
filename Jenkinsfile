@@ -33,7 +33,10 @@ pipeline {
     stages {
         stage('Stage1') {
             when {
-                environment name: 'ENV', value: 'QA'
+                anyof {
+                    environment name: 'ENV', value: 'DEV'
+                    environment name: 'ENV', value: 'QA'
+                }
             }
             input {
                 message "Do you want to approve to continue?"
