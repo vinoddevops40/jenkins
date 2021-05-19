@@ -17,7 +17,7 @@ pipeline {
 
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
-        choice(name: 'ENV', choices: ['DEV', 'QA', 'PROD'], description: 'Pick the environment')
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
@@ -32,9 +32,6 @@ pipeline {
     }
     stages {
         stage('Stage1') {
-            when {
-                ENV == "QA"
-            }
             input {
                 message "Do you want to approve to continue?"
                 ok "Yes, we should."
@@ -52,9 +49,6 @@ pipeline {
             }
         }
         stage('Stage2') {
-            when {
-                ENV == "PROD"
-            }
              steps {
                 sh 'echo Hello Stage2, URL = ${SURL}'
              }
