@@ -91,6 +91,7 @@ pipeline {
             }
             steps {
                 echo "Deploying to ${deployEnv}"
+                sh 'sleep 60'
             }
         }
     }
